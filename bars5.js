@@ -15,10 +15,6 @@ var myheight = 600
 
 var angle=0
 
-// function preload(name = "hardbass2") {
-//     song = loadSound(`../MUSIC/${name}.mp3`)
-// }
-
 function setup(val="hardbass2"){
     createCanvas(mywidth,myheight)
     background(0)
@@ -29,6 +25,9 @@ function setup(val="hardbass2"){
     }  
     
     song = loadSound(`./MUSIC/${val}.mp3`,typed)
+    
+    songButton = createButton('play')
+    songButton.mousePressed(togglePlay)
     
     amp = new p5.Amplitude()
     fft = new p5.FFT(0.9,bins)
@@ -43,9 +42,17 @@ function typed() {
     else song.play()
     
     console.log(val)
-    //loadSound(val)   
-    //song.stop()
-    //preload(val)
+}
+
+function togglePlay() {
+    if(song.isPlaying()){
+        song.pause()
+        songButton.html('play')
+    }
+    else{
+        song.play()
+        songButton.html('pause')
+    }
 }
 
 var x=0,y=0,t=0,r=0
@@ -68,5 +75,4 @@ function draw(){
         
         B[i].move(vol,i)
     }
-
 }
