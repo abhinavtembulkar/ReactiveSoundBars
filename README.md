@@ -6,7 +6,8 @@ Project is hosted at : https://abhinavtembulkar.github.io/reactive_soundBars/
 Instructions : wait for default song to load and song will play itself , otherwise type the name of song present in MUSIC directory
 of github repository and wait for song to load and play !
 
-## screenshots
-![](/images/circlebars.png)
-
+## demo
 ![](/images/beats.gif)
+
+## screenshots
+<img src="https://abhinavtembulkar.github.io/reactive_soundBars/images/circlebars.png" height="400px" width="400px">
