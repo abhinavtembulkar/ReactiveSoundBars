@@ -8,3 +8,5 @@ of github repository and wait for song to load and play !
 
 ## screenshots
 ![](/images/circlebars.png)
+
+![](/images/beats.gif)
