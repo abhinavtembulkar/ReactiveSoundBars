@@ -10,4 +10,4 @@ of github repository and wait for song to load and play !
 ![](/images/beats.gif)
 
 ## screenshots
-<img src="https://abhinavtembulkar.github.io/reactive_soundBars/images/circlebars.png" height="400px" width="400px">
+<img src="https://abhinavtembulkar.github.io/Reactive_soundBars/images/circlebars.png" height="400px" width="400px">
