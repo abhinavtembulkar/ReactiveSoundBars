@@ -1,4 +1,4 @@
-# reactive_soundBars
+# ReactiveSoundBars
 A innovative music visualization based on p5.js library.Utilizes frequency spectrum of song to generate this visualization
 
 Project is hosted at : https://abhinavtembulkar.github.io/Reactive_SoundBars/ 
