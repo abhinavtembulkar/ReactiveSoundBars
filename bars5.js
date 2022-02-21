@@ -28,7 +28,7 @@ function setup(val = "hardbass2") {
         B.push(new bars(5 * i, 1, 10 * i, 0, 0))
     }
 
-    song = loadSound(`../MUSIC/${val}.mp3`, typed)
+    song = loadSound(`./MUSIC/${val}.mp3`, typed)
 
     play.onclick = (event) => {
         togglePlay()
@@ -47,7 +47,7 @@ function setup(val = "hardbass2") {
     songs.oninput = (event) => {
         console.log(event.target.value)
         song.stop()
-        song = loadSound(`../MUSIC/${event.target.value}.mp3`, typed)
+        song = loadSound(`./MUSIC/${event.target.value}.mp3`, typed)
     }
 
     amp = new p5.Amplitude()
