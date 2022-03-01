@@ -20,6 +20,26 @@ const myheight = 5 * screen.availHeight / 8
 
 var angle = 0
 
+play.onclick = (event) => {
+    togglePlay()
+}
+
+inp.onchange = (event) => {
+    console.log(event)
+    song.stop()
+    song = loadSound(event.target.files[0], typed)
+    const dropdown = document.createElement("option")
+    const songname = event.target.files[0].name
+    dropdown.text = songname.substr(0,8)
+    songs.add(dropdown)
+}
+
+songs.oninput = (event) => {
+    console.log(event.target.value)
+    song.stop()
+    song = loadSound(`../MUSIC/${event.target.value}.mp3`, typed)
+}
+
 function setup(val = "hardbass2") {
     createCanvas(mywidth, myheight)
     background(0)
@@ -28,27 +48,7 @@ function setup(val = "hardbass2") {
         B.push(new bars(5 * i, 1, 10 * i, 0, 0))
     }
 
-    song = loadSound(`./MUSIC/${val}.mp3`, typed)
-
-    play.onclick = (event) => {
-        togglePlay()
-    }
-
-    inp.onchange = (event) => {
-        console.log(event)
-        song.stop()
-        song = loadSound(event.target.files[0], typed)
-        const dropdown = document.createElement("option")
-        dropdown.setAttribute("value",3)
-        dropdown.setAttribute("innerText",event.target.files[0].name)
-        songs.appendChild(dropdown)
-    }
-
-    songs.oninput = (event) => {
-        console.log(event.target.value)
-        song.stop()
-        song = loadSound(`./MUSIC/${event.target.value}.mp3`, typed)
-    }
+    song = loadSound(`../MUSIC/${val}.mp3`, typed)   
 
     amp = new p5.Amplitude()
     fft = new p5.FFT(0.9, bins)
@@ -60,7 +60,9 @@ function typed() {
         const val = search.value;
         setup(val)
     }
-    else song.play()
+    else {
+        song.play()
+    }
 }
 
 function togglePlay() {
