@@ -37,7 +37,7 @@ inp.onchange = (event) => {
 songs.oninput = (event) => {
     console.log(event.target.value)
     song.stop()
-    song = loadSound(`../MUSIC/${event.target.value}.mp3`, typed)
+    song = loadSound(`./MUSIC/${event.target.value}.mp3`, typed)
 }
 
 function setup(val = "hardbass2") {
