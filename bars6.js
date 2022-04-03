@@ -2,6 +2,7 @@ const search = document.getElementById('search')
 const play = document.getElementById('play')
 const inp = document.getElementById("get-files");
 const songs = document.getElementById("songs")
+const snacker = document.getElementById("snackbar");
 
 var B = []
 var n = 71
@@ -15,6 +16,7 @@ var vol2
 var bins = 256
 var strength = 150
 
+const isMobile = navigator?.userAgentData?.mobile;
 const mywidth = screen.availWidth / 2
 const myheight = 5 * screen.availHeight / 8
 
@@ -41,14 +43,21 @@ songs.oninput = (event) => {
 }
 
 function setup(val = "hardbass2") {
-    createCanvas(mywidth, myheight)
+    if(isMobile){
+        createCanvas(1400, 700)
+    }
+    else {
+        createCanvas(mywidth, myheight)
+    }
     background(0)
+
+    alerter_show()
 
     for (var i = n - 1; i >= 0; i--) {
         B.push(new bars(5 * i, 1, 10 * i, 0, 0))
     }
 
-    song = loadSound(`../MUSIC/${val}.mp3`, typed)   
+    song = loadSound(`./MUSIC/${val}.mp3`, typed)   
 
     amp = new p5.Amplitude()
     fft = new p5.FFT(0.9, bins)
@@ -62,6 +71,7 @@ function typed() {
     }
     else {
         song.play()
+        alerter_hide()
     }
 }
 
@@ -95,4 +105,12 @@ function draw() {
 
         B[i].move(vol, i)
     }
+}
+
+function alerter_show() {
+    snacker.className = "show"
+} 
+
+function alerter_hide() {
+    setTimeout(()=>{snacker.className = ""},1000)
 }
