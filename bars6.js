@@ -1,6 +1,7 @@
 const search = document.getElementById('search')
 const play = document.getElementById('play')
 const inp = document.getElementById("get-files");
+const test = document.getElementById("test")
 const songs = document.getElementById("songs")
 const snacker = document.getElementById("snackbar");
 
@@ -19,6 +20,7 @@ var strength = 150
 const isMobile = navigator?.userAgentData?.mobile;
 const mywidth = isMobile ? screen.availWidth / 2 : screen.availWidth
 const myheight = isMobile ? 5 * screen.availHeight / 8 : screen.availHeight
+test.innerText = `${isMobile}`
 
 var angle = 0
 
