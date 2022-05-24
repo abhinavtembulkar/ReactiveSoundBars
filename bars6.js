@@ -17,8 +17,8 @@ var bins = 256
 var strength = 150
 
 const isMobile = navigator?.userAgentData?.mobile;
-const mywidth = isMobile ? screen.availWidth / 2 : screen.availWidth
-const myheight = isMobile ? 5 * screen.availHeight / 8 : screen.availHeight
+const mywidth = isMobile ? screen.availWidth : screen.availWidth / 2
+const myheight = isMobile ? screen.availHeight : 5 * screen.availHeight / 8
 
 var angle = 0
 
