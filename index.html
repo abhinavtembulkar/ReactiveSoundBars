@@ -5,28 +5,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="bars6.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.10.2/p5.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.1/p5.min.js" integrity="sha512-NxocnqsXP3zm0Xb42zqVMvjQIktKEpTIbCXXyhBPxqGZHqhcOXHs4pXI/GoZ8lE+2NJONRifuBpi9DxC58L0Lw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.10.2/addons/p5.sound.min.js"></script>
     <title>SoundBars6</title>
-    <style>
-        body {
-            background-color: black;
-        }
-
-        p {
-            color: aliceblue;
-        }
-    </style>
 </head>
 
 <body>
     <div id="snackbar">Loading...</div> 
-    <p>Search Song:
+    <p>Play Song:
         <!-- <input id="search" type="search" onsearch="typed()"> -->
         <button id="play">Pause</button>
-        <label for="">Choose song:</label>
-        <p id="test">isMobile</p>
+        <label for="songs">Choose song:</label>
+        <!-- <p id="test">isMobile</p> -->
 
         <select name="songs" id="songs">
             <option value="hardbass2">Hardbass</option>
@@ -34,10 +25,11 @@
             <option value="popsicle">Popsicle</option>
         </select>
 
+        <label for="get-files">Upload song:</label>
         <input type="file"name="client-file" id="get-files" />
     </p>
 </body>
-<script src="barsclass6.js"></script>
-<script src="bars6.js"></script>
+<script src="barsclass.js"></script>
+<script src="index.js"></script>
 
 </html>

@@ -26,7 +26,7 @@ class bars{
     if(vol > 80) stroke(0,0,rev)
     else if(vol > 40) stroke(0,rev,0)
     else stroke(this.R,this.G,this.B)
-    rect(-0,10,vol,5)
+    rect(0,10,vol,5)
 
     resetMatrix()
     }
